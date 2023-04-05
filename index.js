@@ -6,7 +6,12 @@ const fs = require('fs');
 
 // Create an array of questions for user input
 const questions = [
-  {
+{
+    type: 'input',
+    name: 'logo letters',
+    message: "TEXT: Enter up to (3) characters:"
+},
+{
     type: 'input',
     name: 'textColor',
     message: 'Please input the color keyword or hexidecimal number you would like your logo text to be.',

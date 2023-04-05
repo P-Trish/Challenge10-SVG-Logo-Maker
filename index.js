@@ -46,11 +46,11 @@ function generateSvg(responses) {
   let svgCode;
 
   if (shape === 'Circle') {
-    svgCode = `<svg width="200" height="200"><circle cx="100" cy="100" r="80" fill="${shapeColor}" /></svg>`;
+    svgCode = `<svg width="300" height="200"><circle cx="100" cy="100" r="80" fill="${shapeColor}" /></svg>`;
   } else if (shape === 'Square') {
-    svgCode = `<svg width="200" height="200"><rect x="40" y="40" width="120" height="120" fill="${shapeColor}" /></svg>`;
+    svgCode = `<svg width="300" height="200"><rect x="40" y="40" width="120" height="120" fill="${shapeColor}" /></svg>`;
   } else if (shape === 'Triangle') {
-    svgCode = `<svg width="200" height="200"><polygon points="100,20 20,180 180,180" fill="${shapeColor}" /></svg>`;
+    svgCode = `<svg width="300" height="200"><polygon points="100,20 20,180 180,180" fill="${shapeColor}" /></svg>`;
   }
 
   return svgCode;

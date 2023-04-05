@@ -1,55 +1,71 @@
-//  Include packages needed 
 
+
+// Include packages needed 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const svgFile = require('./lib/svg');
-const shapesFile = require('./lib/shapes');
 
 // Create an array of questions for user input
 const questions = [
+  {
+    type: 'input',
+    name: 'textColor',
+    message: 'Please input the color keyword or hexidecimal number you would like your logo text to be.',
+  },
+  {
+    type: 'list',
+    name: 'shape',
+    message: 'Please choose the shape you would like your logo to be.',
+    choices: ['Circle', 'Triangle', 'Square'],
+  },
+  {
+    type: 'input',
+    name: 'shapeColor',
+    message: 'Please input the color keyword or hexidecimal number you would like your logo shape color to be.'
+  },
+];
 
-    {
-        type: 'input',
-        name: 'Text Color',
-        message: 'Please input the color keyword or hexidecimal number you would like your logo text to be.',
-    },
-    {
-        type: 'list',
-        name: 'Shape',
-        message: 'Please choose the shape you would like your logo to be.',
-        choices: ['Circle', 'Triangle', 'Square'],
-    },
-    {
-        type: 'input',
-        name: 'Shape Color',
-        message: 'Please input the color keyword or hexidecimal number you would like your logo shape color to be.'
-    },
-]
-
-
-
-// TODO: Create a function to write shapes file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => {
-        err ? console.err(err) : console.log('outputReadme.md Created!')
-    })
+// Function to write SVG data to a file
+function writeToFile(data) {
+  fs.writeFile('output.svg', data, (error) => {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log('output.svg created!');
+    }
+  });
 }
 
-// TODO: Create a function to write SVG file 
+// Function to generate SVG code based on user input
+function generateSvg(responses) {
+  const { shape, shapeColor } = responses;
+  let svgCode;
 
-// TODO: Create a function to initialize app
+  if (shape === 'Circle') {
+    svgCode = `<svg width="200" height="200"><circle cx="100" cy="100" r="80" fill="${shapeColor}" /></svg>`;
+  } else if (shape === 'Square') {
+    svgCode = `<svg width="200" height="200"><rect x="40" y="40" width="120" height="120" fill="${shapeColor}" /></svg>`;
+  } else if (shape === 'Triangle') {
+    svgCode = `<svg width="200" height="200"><polygon points="100,20 20,180 180,180" fill="${shapeColor}" /></svg>`;
+  }
+
+  return svgCode;
+}
+
+// Function to initialize app
 function init() {
-    inquirer.prompt(questions)
-        .then((response) => {
-            const generateMarkdown = markdownFile(response);
-            writeToFile("outputReadme.md", generateMarkdown);
-        })
-        .catch((err) => console.error(err));
+  inquirer.prompt(questions).then((responses) => {
+    const svgCode = generateSvg(responses);
+    writeToFile(svgCode);
+  }).catch((err) => console.error(err));
 }
-
 
 // Function call to initialize app
 init();
+
+
+
+
+
 
 
 
@@ -66,10 +82,10 @@ init();
 // WHEN I am prompted for the shape's color
 // THEN I can enter a color keyword (OR a hexadecimal number)
 
+
 // WHEN I have entered input for all the prompts
 // THEN an SVG file is created named `logo.svg`
 // AND the output text "Generated logo.svg" is printed in the command line (pass through as a parameter and call upon it when initializing )
-
 
 // WHEN I open the `logo.svg` file in a browser
 // THEN I am shown a 300x200 pixel image that matches the criteria I entered

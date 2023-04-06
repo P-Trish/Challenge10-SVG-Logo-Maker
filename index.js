@@ -1,6 +1,8 @@
 // Include packages needed 
 const inquirer = require('inquirer');
 const fs = require('fs');
+const SVG = require('./lib/svg');
+const {Circle, Triangle, Square} = require('./lib/shapes');
 
 // Create an array of questions for user input
 const questions = [
@@ -42,13 +44,30 @@ function writeToFile(data) {
 function generateSvg(responses) {
   const { shape, shapeColor, logoLetters, textColor } = responses;
   let svgCode;
+  const svg = new SVG()
+  svg.setText(logoLetters, textColor);
 
   if (shape === 'Circle') {
-    svgCode = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><circle cx="150" cy="100" r="80" fill="${shapeColor}" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${logoLetters}</text> </svg>`;
+    const circle = new Circle();
+    circle.setColor(shapeColor);
+    svg.setShape(circle);
+    svgCode = svg.render();
+    console.log(svgCode);
+
   } else if (shape === 'Square') {
-    svgCode = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><rect x="90" y="40" width="120" height="120" fill="${shapeColor}" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${logoLetters}</text> </svg>`;
+    const square = new Square();
+    square.setColor(shapeColor);
+    svg.setShape(square);
+    svgCode = svg.render();
+    console.log(svgCode);
+
   } else if (shape === 'Triangle') {
-    svgCode = `<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="150, 18 244,182 56,182" fill="${shapeColor}" /><text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${logoLetters}</text> </svg>`;
+
+    const triangle = new Triangle();
+    triangle.setColor(shapeColor);
+    svg.setShape(triangle);
+    svgCode = svg.render();
+    console.log(svgCode);
   }
 
   return svgCode;

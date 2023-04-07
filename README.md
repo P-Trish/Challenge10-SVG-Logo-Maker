@@ -9,7 +9,7 @@ The motivation for this project was to respond to the user story of
 "AS a freelance web developer
 I WANT to generate a simple logo for my projects
 SO THAT I don't have to pay a graphic designer." 
-Additionally I'd like to demonstrate how to generate the logo through the command-line application with the inquirer node module.  
+Additionally I'd like to demonstrate how to generate the logo through the command-line application with the inquirer node module but to first run the tests to make sure they pass beforehand.
 
 This project was built as a tool to generate simple graphics such as a SVG logo so that developers could save on having to hire a separate graphic desiginer for such an incomplex task.  
 
@@ -30,29 +30,35 @@ To install JEST, I ran 'npm install --save-dev jest' in the terminal.
 
 ## Usage
 
+To create a logo.SVG file, the command 'node index.js' is used in the command line to initiate the application from the project root directory.  The application uses inquirer and prompts the user to select 3 characters, a color, shape, and text color for the logo, and then saves the generated SVG to a .svg file.  
 
-The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a .svg file.`
+![alt text](./images/HW%2010%20PROMPTED%20QUESTIONS.png)
 
-Each shape class was tested for a render() method that returned a string for the corresponding SVG file with the given shape color.
+Each shape class was tested for a render() method that returned a string for the corresponding SVG file with the given shape, shape color, and text color.
 
- Classes created for each of the shapes used inheritance so that code is not repeated.  
+![alt text](./images/HW%2010%20String%20Output.png)
 
-This application receives user input to generate the logo as a 'logo.svg' file. 
+Classes created for each of the shapes used inheritance so that code is not repeated. 
 
-   
-![alt text](./images/HW%209%20PASSED%20TESTS.png)
-![alt text](./images/HW%209%20PROMPTED%20QUESTIONS.png)
-![alt text](./images/HW%209%20SVG%20FILE.png)
+![alt text](./images/HW%2010%20SVG%20FILE.png)
 
 ## Credits
 
-Emma Daily
-Michael R
-Michael H
+I'd like to give credit to my study group who I've worked alongside with for this project as we share and check that our code works properly: Emma Daily, Michael Rader, and Michael Huang.
 
+I'd also like to thank my instructor Bryan Swarthout and TA Shawn Tschoepe for his guidance and encouragement. 
 
 ## License
 N/A
 
 ## Tests
+
+![alt text](./images/HW%2010%20PASSED%20TESTS.png)
+
+Please see tests files provided in repo. 
+
+## Questions
+
+If you have any questions, please contact me directly at pkfalberto@gmail.com.  
+
 

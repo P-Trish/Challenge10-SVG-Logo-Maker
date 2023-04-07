@@ -28,6 +28,8 @@ To use the Inquirer packagem I ran 'npm i inquirer@8.2.4'.
 
 To install JEST, I ran 'npm install --save-dev jest' in the terminal.
 
+![alt text](./images/HW10Setup.png)
+
 ## Usage
 
 To create a logo.SVG file, the command 'node index.js' is used in the command line to initiate the application from the project root directory.  The application uses inquirer and prompts the user to select 3 characters, a color, shape, and text color for the logo, and then saves the generated SVG to a .svg file.  

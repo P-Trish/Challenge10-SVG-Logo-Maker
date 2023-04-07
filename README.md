@@ -18,7 +18,7 @@ This solves the problem for freelance developers that would like to save on havi
 By creating this project, I learned how to explore and utilize the Node Package Manager (NPM) Inquirer package, the module.exports method in exporting a file and the require method for including packages needed for an application. I also learned how to run and pass tests prior to writing the code.  
 
 LINK TO SVG LOGO MAKER DEMO: 
-https://drive.google.com/file/d/1WdkanXUzjkWRTQ5qYL2wA3vYhaK61eFp/view  
+https://drive.google.com/file/d/1rQij95m_qsZ71s2WCvnCFkazI8LliGem/view
 
 ## Installation
 

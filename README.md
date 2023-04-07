@@ -26,9 +26,11 @@ In order to install project dependencies, I ran 'npm i -y' in the project root d
 
 To use the Inquirer packagem I ran 'npm i inquirer@8.2.4'.
 
-TO install JEST, I ran 'npm install --save-dev jest' in the terminal.
+To install JEST, I ran 'npm install --save-dev jest' in the terminal.
 
 ## Usage
+
+
 The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a .svg file.`
 
 Each shape class was tested for a render() method that returned a string for the corresponding SVG file with the given shape color.
@@ -37,13 +39,14 @@ Each shape class was tested for a render() method that returned a string for the
 
 This application receives user input to generate the logo as a 'logo.svg' file. 
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+   
+![alt text](./images/HW%209%20PASSED%20TESTS.png)
+![alt text](./images/HW%209%20PROMPTED%20QUESTIONS.png)
+![alt text](./images/HW%209%20SVG%20FILE.png)
 
 ## Credits
 
-Emma
+Emma Daily
 Michael R
 Michael H
 

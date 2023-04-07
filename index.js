@@ -94,6 +94,7 @@ init();
 
 
 
+// ACCEPTANCE CRITERIA
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for text
@@ -107,7 +108,6 @@ init();
 
 // WHEN I am prompted for the shape's color
 // THEN I can enter a color keyword (OR a hexadecimal number)
-
 
 // WHEN I have entered input for all the prompts
 // THEN an SVG file is created named `logo.svg`
